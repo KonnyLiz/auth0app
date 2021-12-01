@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { PreciosComponent } from './components/precios/precios.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { CallbackComponent } from './components/callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,16 @@ import { PreciosComponent } from './components/precios/precios.component';
     NavbarComponent,
     HomeComponent,
     ProtegidaComponent,
-    PreciosComponent
+    PreciosComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: 'dev-6vyy2lo5.us.auth0.com',
+      clientId: 'et1Q53ncILOsNiVqPhoceKhvdgoOabQq'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
